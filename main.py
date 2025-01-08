@@ -23,7 +23,7 @@ score: int = 0
 
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption('Aircraft War')
+pygame.display.set_caption('Plane shooter remake')
 
 bullet_sound = pygame.mixer.Sound('resources/sound/bullet.wav')
 enemy1_down_sound = pygame.mixer.Sound('resources/sound/enemy1_down.wav')
@@ -75,9 +75,9 @@ while True:
     clock.tick(60)
     if score in WIN_SCORE: 
         WIN_SCORE.remove(score)
-        enemy_speed *=enemy_speed_mp
+        enemy_speed *= enemy_speed_mp
         for enemy in enemies1:
-            enemy.speed*=enemy_speed_mp
+            enemy.speed *= enemy_speed_mp
 
     if not player.is_hit:
         if shoot_frequency % 15 == 0:
@@ -127,8 +127,8 @@ while True:
         screen.blit(player.image[player.img_index], player.rect)
         player_down_index += 1
         if player_down_index > 47: #
-            end=True
-            win=False
+            end = True
+            win = False
 
     for enemy_down in enemies_down:
         if enemy_down.down_index == 0:
