@@ -7,7 +7,7 @@ class Bullet(pygame.sprite.Sprite):
         self.image = bullet_img
         self.rect = self.image.get_rect()
         self.rect.midbottom = init_pos
-        self.speed = 10
+        self.speed: int = 10
 
     def move(self):
         self.rect.top -= self.speed
@@ -21,9 +21,9 @@ class Player(pygame.sprite.Sprite):
             self.image.append(plane_img.subsurface(p_rect[i]).convert_alpha())
         self.rect = p_rect[0]                      
         self.rect.topleft = init_pos                    
-        self.speed = 8                                  
+        self.speed: int = 8                                  
         self.bullets = pygame.sprite.Group()            
-        self.img_index = 0                              
+        self.img_index: int = 0                              
         self.is_hit = False                             
 
     def shoot(self, bullet_img):
@@ -62,7 +62,7 @@ class Enemy(pygame.sprite.Sprite):
        self.rect.topleft = init_pos
        self.down_imgs = enemy_down_imgs
        self.speed: int = enemySpeed or enemy_speed
-       self.down_index = 0
+       self.down_index: int = 0
 
     def move(self):
         self.rect.top += self.speed
