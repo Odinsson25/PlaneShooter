@@ -126,7 +126,7 @@ while True:
         player.img_index = player_down_index // 8
         screen.blit(player.image[player.img_index], player.rect)
         player_down_index += 1
-        if player_down_index > 47: #
+        if player_down_index > 47: 
             end = True
             win = False
 
@@ -160,7 +160,7 @@ while True:
             exit()
             
     key_pressed = pygame.key.get_pressed()
-    if key_pressed[K_ESCAPE]: # Toegevoegd
+    if key_pressed[K_ESCAPE]: 
          pygame.quit()
 
     if not player.is_hit:
@@ -175,7 +175,7 @@ while True:
      
     if end and not win:
         font = pygame.font.Font(None, 48)
-        text = font.render(str(score), True, (50, 0, 0))  # Veranderd
+        text = font.render(str(score), True, (50, 0, 0))  
         text_rect = text.get_rect()
         text_rect.centerx = screen.get_rect().centerx
         text_rect.centery = screen.get_rect().centery - 24
@@ -192,7 +192,7 @@ while True:
 
     if end and win:
         font = pygame.font.Font(None, 48)
-        text = font.render(str("Score: "+str(score)), True, (50, 0, 0))  # Veranderd
+        text = font.render(str("Score: "+str(score)), True, (50, 0, 0))  
         text_rect = text.get_rect()
         text_rect.centerx = screen.get_rect().centerx
         text_rect.centery = screen.get_rect().centery + 24
